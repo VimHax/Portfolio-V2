@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 
-const outfit = Outfit({ subsets: ['latin'] });
+const outfit = Outfit({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'VimHax | Portfolio'
