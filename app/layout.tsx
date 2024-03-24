@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { Outfit } from 'next/font/google';
+import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
 
-const outfit = Outfit({ weight: 'variable', subsets: ['latin'], variable: '--font-outfit' });
+const outfit = Roboto_Mono({ weight: 'variable', subsets: ['latin'], variable: '--font-outfit' });
 
 const panchang = localFont({
 	src: './fonts/Panchang-Bold.woff2',
