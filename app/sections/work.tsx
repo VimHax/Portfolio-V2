@@ -1,0 +1,142 @@
+import Image, { StaticImageData } from 'next/image';
+import { SocialIcon } from 'react-social-icons';
+
+import Ares from './ares.png';
+
+function Social({ network, href }: { network: string; href: string }) {
+	return (
+		<a
+			target="_blank"
+			href={href}
+			className="btn-icon h-fit w-fit rounded-lg border-[1px] border-solid border-neutral-900 bg-black transition hover:border-white hover:bg-white"
+		>
+			<SocialIcon as="div" network={network} fgColor="white" bgColor="none" />
+		</a>
+	);
+}
+
+function Tag({ name, href }: { name: string; href: string }) {
+	return (
+		<a
+			target="_blank"
+			href={href}
+			className="h-fit w-fit rounded-lg border-[1px] border-solid border-neutral-900 bg-black px-2 pb-1 pt-1.5 text-sm font-bold uppercase tracking-widest text-white transition hover:border-white hover:bg-white hover:text-black"
+		>
+			#{name}
+		</a>
+	);
+}
+
+function Project({
+	title,
+	subtitle,
+	image,
+	description,
+	links,
+	tags
+}: {
+	title: string;
+	subtitle: string;
+	image: { src: StaticImageData; alt: string };
+	description: string;
+	links: { network: string; url: string }[];
+	tags: { name: string; url: string }[];
+}) {
+	return (
+		<div className="topography group grid grid-cols-1 grid-rows-2 rounded-lg 2xl:grid-cols-2 2xl:grid-rows-1">
+			<div className="relative w-full mix-blend-screen">
+				<Image
+					className="object-cover object-center max-2xl:rounded-t-lg 2xl:group-odd:rounded-r-lg 2xl:group-even:rounded-l-lg"
+					src={image.src}
+					alt={image.alt}
+					fill
+					quality={100}
+				/>
+				<div className="absolute left-0 top-0 h-full w-full from-black via-transparent to-transparent max-2xl:rounded-t-lg max-2xl:bg-gradient-to-t 2xl:group-odd:rounded-r-lg 2xl:group-odd:bg-gradient-to-r 2xl:group-even:rounded-l-lg 2xl:group-even:bg-gradient-to-l"></div>
+				<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white/5 max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
+				<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white mix-blend-overlay max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
+			</div>
+			<div className="flex flex-col items-center justify-center gap-7	border-[1px] border-solid border-neutral-900 p-12 max-2xl:rounded-b-lg max-2xl:border-t-0 2xl:p-32 2xl:group-odd:-order-1 2xl:group-odd:rounded-l-lg 2xl:group-odd:border-r-0 2xl:group-even:rounded-r-lg 2xl:group-even:border-l-0">
+				<div className="flex w-full items-end justify-between">
+					<div className="flex flex-col gap-2">
+						<h1 className="text-7xl font-bold">{title}</h1>
+						<h2 className="text-sm font-bold uppercase tracking-widest">{subtitle}</h2>
+					</div>
+					<div className="flex gap-2">
+						{links.map(({ network, url }) => (
+							<Social network={network} href={url} />
+						))}
+					</div>
+				</div>
+				<div className="flex w-full items-center gap-2">
+					{tags.map(({ name, url }) => (
+						<Tag name={name} href={url} />
+					))}
+					<hr className="flex-grow border-neutral-900" />
+				</div>
+				<div className="flex flex-col gap-5">
+					<p>{description}</p>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default function Work() {
+	return (
+		<main className="grid w-full grid-cols-2 gap-12 p-12 2xl:grid-cols-1">
+			<Project
+				title="Ares"
+				subtitle="A Programming Language"
+				image={{ src: Ares, alt: 'Sample Ares code' }}
+				tags={[
+					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
+					{ name: 'LLVM', url: 'https://llvm.org/' }
+				]}
+				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
+				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
+							was my first dive into making a compiled language, with static analysis that can infer
+							data types at compile time."
+			/>
+			<Project
+				title="Ares"
+				subtitle="A Programming Language"
+				image={{ src: Ares, alt: 'Sample Ares code' }}
+				tags={[
+					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
+					{ name: 'LLVM', url: 'https://llvm.org/' }
+				]}
+				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
+				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
+							was my first dive into making a compiled language, with static analysis that can infer
+							data types at compile time."
+			/>
+			<Project
+				title="Ares"
+				subtitle="A Programming Language"
+				image={{ src: Ares, alt: 'Sample Ares code' }}
+				tags={[
+					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
+					{ name: 'LLVM', url: 'https://llvm.org/' }
+				]}
+				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
+				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
+							was my first dive into making a compiled language, with static analysis that can infer
+							data types at compile time."
+			/>
+			<Project
+				title="Ares"
+				subtitle="A Programming Language"
+				image={{ src: Ares, alt: 'Sample Ares code' }}
+				tags={[
+					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
+					{ name: 'LLVM', url: 'https://llvm.org/' }
+				]}
+				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
+				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
+							was my first dive into making a compiled language, with static analysis that can infer
+							data types at compile time."
+			/>
+		</main>
+	);
+}
