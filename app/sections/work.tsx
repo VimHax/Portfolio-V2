@@ -45,7 +45,7 @@ function Project({
 				<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white/5 max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
 				<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white mix-blend-overlay max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
 			</div>
-			<div className="flex flex-col items-center justify-center gap-7	border-[1px] border-solid border-neutral-900 p-12 max-2xl:rounded-b-lg max-2xl:border-t-0 2xl:p-32 2xl:group-odd:-order-1 2xl:group-odd:rounded-l-lg 2xl:group-odd:border-r-0 2xl:group-even:rounded-r-lg 2xl:group-even:border-l-0">
+			<div className="p-unit flex flex-col items-center justify-center	gap-7 border-[1px] border-solid border-neutral-900 max-2xl:rounded-b-lg max-2xl:border-t-0 2xl:p-32 2xl:group-odd:-order-1 2xl:group-odd:rounded-l-lg 2xl:group-odd:border-r-0 2xl:group-even:rounded-r-lg 2xl:group-even:border-l-0">
 				<div className="flex w-full items-end justify-between">
 					<div className="flex flex-col gap-2">
 						<h1 className="text-7xl font-bold">{title}</h1>
@@ -73,7 +73,7 @@ function Project({
 
 export default function Work() {
 	return (
-		<main className="grid w-full grid-cols-2 gap-12 p-12 2xl:grid-cols-1">
+		<main className="gap-unit p-unit grid w-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-1">
 			<Project
 				title="Ares"
 				subtitle="A Programming Language"

@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--unit: 48px;
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--unit: 24px;
+	}
+}
+
 body {
-	@apply bg-black text-white;
+	@apply overflow-x-clip bg-black text-white;
 }
 
 .btn-icon:hover .social-svg-icon {

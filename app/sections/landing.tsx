@@ -5,7 +5,7 @@ import Logo from '@/app/components/Logo';
 
 export default function Landing() {
 	return (
-		<main className="topography flex h-screen w-full flex-col gap-12 p-12">
+		<main className="topography gap-unit p-unit flex h-screen w-full flex-col">
 			<div className="flex h-8 w-full items-center justify-between">
 				<div className="flex items-center gap-8">
 					<Logo className="h-8 w-8" />

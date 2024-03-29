@@ -6,7 +6,7 @@ import Social from '../components/Social';
 
 export default function Footer() {
 	return (
-		<main className="topography flex w-full items-center justify-between p-12">
+		<main className="topography p-unit flex w-full items-center justify-between">
 			<div className="flex items-center gap-8">
 				<Logo className="h-8 w-8" />
 				<div className="h-8 w-[1px] bg-white/50"></div>
