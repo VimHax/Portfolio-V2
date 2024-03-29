@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 
-import Ares from './ares.png';
+import AresImg from './ares.png';
+import EeliosImg from './eelios.png';
 import Social from '../components/Social';
 
 function Tag({ name, href }: { name: string; href: string }) {
@@ -76,7 +77,7 @@ export default function Work() {
 			<Project
 				title="Ares"
 				subtitle="A Programming Language"
-				image={{ src: Ares, alt: 'Sample Ares code' }}
+				image={{ src: AresImg, alt: 'Sample Ares code' }}
 				tags={[
 					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
 					{ name: 'LLVM', url: 'https://llvm.org/' }
@@ -89,41 +90,15 @@ export default function Work() {
 			<Project
 				title="Eelios"
 				subtitle="A Programming Language"
-				image={{ src: Ares, alt: 'Sample Ares code' }}
+				image={{ src: EeliosImg, alt: 'Sample Eelios code' }}
 				tags={[
-					{ name: 'TypeScript', url: 'https://www.rust-lang.org/' },
-					{ name: 'Node.js', url: 'https://llvm.org/' }
+					{ name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+					{ name: 'Node.js', url: 'https://nodejs.org/' }
 				]}
-				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
+				links={[{ network: 'github', url: 'https://github.com/VimHax/Eelios' }]}
 				description="A dynamically typed interpreted programming language. This language was an
 				entry for a programming language competition. The language was built on a gimmick:
 				'What if statements themselves can be manipulated like array elements?'"
-			/>
-			<Project
-				title="Ares"
-				subtitle="A Programming Language"
-				image={{ src: Ares, alt: 'Sample Ares code' }}
-				tags={[
-					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
-					{ name: 'LLVM', url: 'https://llvm.org/' }
-				]}
-				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
-				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
-							was my first dive into making a compiled language, with static analysis that can infer
-							data types at compile time."
-			/>
-			<Project
-				title="Ares"
-				subtitle="A Programming Language"
-				image={{ src: Ares, alt: 'Sample Ares code' }}
-				tags={[
-					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
-					{ name: 'LLVM', url: 'https://llvm.org/' }
-				]}
-				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
-				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
-							was my first dive into making a compiled language, with static analysis that can infer
-							data types at compile time."
 			/>
 		</main>
 	);
