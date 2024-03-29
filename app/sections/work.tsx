@@ -51,14 +51,14 @@ function Project({
 						<h2 className="text-sm font-bold uppercase tracking-widest">{subtitle}</h2>
 					</div>
 					<div className="flex gap-2">
-						{links.map(({ network, url }) => (
-							<Social network={network} href={url} />
+						{links.map(({ network, url }, idx) => (
+							<Social key={idx} network={network} href={url} />
 						))}
 					</div>
 				</div>
 				<div className="flex w-full items-center gap-2">
-					{tags.map(({ name, url }) => (
-						<Tag name={name} href={url} />
+					{tags.map(({ name, url }, idx) => (
+						<Tag key={idx} name={name} href={url} />
 					))}
 					<hr className="flex-grow border-neutral-900" />
 				</div>
@@ -87,17 +87,17 @@ export default function Work() {
 							data types at compile time."
 			/>
 			<Project
-				title="Ares"
+				title="Eelios"
 				subtitle="A Programming Language"
 				image={{ src: Ares, alt: 'Sample Ares code' }}
 				tags={[
-					{ name: 'Rust', url: 'https://www.rust-lang.org/' },
-					{ name: 'LLVM', url: 'https://llvm.org/' }
+					{ name: 'TypeScript', url: 'https://www.rust-lang.org/' },
+					{ name: 'Node.js', url: 'https://llvm.org/' }
 				]}
 				links={[{ network: 'github', url: 'https://github.com/VimHax/Ares' }]}
-				description="A statically typed compiled programming language inspired by TypeScript and Rust. This
-							was my first dive into making a compiled language, with static analysis that can infer
-							data types at compile time."
+				description="A dynamically typed interpreted programming language. This language was an
+				entry for a programming language competition. The language was built on a gimmick:
+				'What if statements themselves can be manipulated like array elements?'"
 			/>
 			<Project
 				title="Ares"
