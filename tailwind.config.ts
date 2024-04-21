@@ -13,7 +13,8 @@ const config: Config = {
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
 			},
 			spacing: {
-				unit: 'var(--unit)'
+				unit: 'var(--unit)',
+				'unit/2': 'calc(var(--unit)/2)'
 			}
 		}
 	},

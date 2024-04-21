@@ -73,7 +73,10 @@ function Project({
 
 export default function Work() {
 	return (
-		<main className="gap-unit p-unit grid w-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-1">
+		<main
+			id="work"
+			className="gap-unit p-unit grid w-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-1"
+		>
 			<Project
 				title="Ares"
 				subtitle="A Programming Language"

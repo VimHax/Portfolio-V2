@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import HeroImage from './hero.png';
-import Logo from '@/app/components/Logo';
+import Logo from '@/app/components/svg/Logo';
 
 export default function Landing() {
 	return (
@@ -13,16 +13,16 @@ export default function Landing() {
 					<span className="text-2xl font-bold uppercase tracking-widest">Vimukthi Weerabahu</span>
 				</div>
 				<div className="text-md flex gap-20 font-bold uppercase tracking-widest">
-					<a className="line-hover" href="/">
+					<a className="line-hover" href="#work">
 						Work
 					</a>
-					<a className="line-hover" href="/">
+					<a className="line-hover" href="#skills">
 						Skills
 					</a>
-					<a className="line-hover" href="/">
+					<a className="line-hover" href="#contact">
 						Contact
 					</a>
-					<a className="line-hover" href="/">
+					<a className="line-hover" href="#about">
 						About
 					</a>
 				</div>

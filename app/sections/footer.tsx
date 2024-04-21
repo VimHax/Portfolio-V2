@@ -1,12 +1,9 @@
-import Image from 'next/image';
-
-import HeroImage from './hero.png';
-import Logo from '@/app/components/Logo';
+import Logo from '@/app/components/svg/Logo';
 import Social from '../components/Social';
 
 export default function Footer() {
 	return (
-		<main className="topography p-unit flex w-full items-center justify-between">
+		<main className="topography flex w-full items-center justify-between p-unit">
 			<div className="flex items-center gap-8">
 				<Logo className="h-8 w-8" />
 				<div className="h-8 w-[1px] bg-white/50"></div>

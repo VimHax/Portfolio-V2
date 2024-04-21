@@ -12,12 +12,12 @@
 	}
 }
 
-body {
-	@apply overflow-x-clip bg-black text-white;
+html {
+	@apply scroll-smooth;
 }
 
-.btn-icon:hover .social-svg-icon {
-	fill: black !important;
+body {
+	@apply overflow-x-clip bg-black text-white;
 }
 
 /* 
