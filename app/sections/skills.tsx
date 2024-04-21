@@ -30,7 +30,7 @@ function Skill({ name, url, children }: { name: string; url: string; children: R
 
 export default function Skills() {
 	return (
-		<main id="skills" className="topography gap-unit/2 grid w-full grid-cols-7 p-unit">
+		<main id="skills" className="topography grid w-full grid-cols-7 gap-unit/2 p-unit">
 			<Skill name="TypeScript" url="https://www.typescriptlang.org/">
 				<TSLogo />
 			</Skill>
