@@ -33,15 +33,7 @@ function Project({
 	tags: { name: string; url: string }[];
 }) {
 	return (
-		<div className="group flex flex-col rounded-2xl bg-neutral-950 transition-colors">
-			{/* <Image
-				className="-z-10 rounded-2xl object-cover object-center"
-				src={image.src}
-				alt={image.alt}
-				fill
-				quality={100}
-			/> */}
-			{/* <div className="h-[500px] rounded-t-2xl bg-neutral-950"></div> */}
+		<div className="group flex flex-col rounded-2xl border-1 border-solid border-neutral-900 bg-neutral-950 transition-colors">
 			<div className="grid grid-cols-2">
 				<div className="flex flex-grow flex-col items-start justify-between p-20">
 					<div className="flex flex-wrap gap-2">
@@ -64,7 +56,7 @@ function Project({
 					<a
 						target="_blank"
 						href={url}
-						className="rounded-2xl bg-neutral-900 px-7 py-3 transition-colors hover:bg-white hover:text-black"
+						className="rounded-2xl bg-neutral-900 px-5 py-3 transition-colors hover:bg-white hover:text-black"
 					>
 						Visit GitHub Repository
 					</a>
@@ -72,9 +64,9 @@ function Project({
 						GitHub
 					</button> */}
 				</div>
-				<div className="relative h-full rounded-2xl bg-neutral-950">
+				<div className="relative h-full rounded-2xl bg-neutral-950 group-even:-order-1">
 					<Image
-						className="rounded-r-2xl object-cover object-left"
+						className="object-cover object-left group-odd:rounded-r-2xl group-even:rounded-l-2xl"
 						src={image.src}
 						alt={image.alt}
 						fill
@@ -134,10 +126,10 @@ function Project({
 
 export default function Work() {
 	return (
-		<main id="work" className="max-w-screen-xl">
+		<main id="work" className="mt-32 max-w-screen-xl">
 			{/* <h1 className="font-title mt-32 text-7xl font-medium">Some of my work;</h1> */}
-			<h1 className="mt-32 text-center font-title text-7xl font-medium">Work</h1>
-			<div className="mt-24 grid w-full grid-cols-1 gap-10 lg:grid-cols-2 2xl:grid-cols-1">
+			<h1 className="text-center font-title text-7xl font-medium">Work</h1>
+			<div className="mt-16 grid w-full grid-cols-1 gap-10 lg:grid-cols-2 2xl:grid-cols-1">
 				<Project
 					title="Sonar"
 					subtitle="A Desktop Application"

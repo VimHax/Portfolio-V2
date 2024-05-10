@@ -3,7 +3,7 @@ import Social from '../components/Social';
 
 export default function Footer() {
 	return (
-		<main className="topography flex w-full items-center justify-between p-unit">
+		<main className="mt-32 flex w-full max-w-screen-xl items-center justify-between py-unit">
 			<div className="flex items-center gap-8">
 				<Logo className="h-8 w-8 [&_path]:fill-white" />
 				<div className="h-8 w-[1px] bg-white/50"></div>
@@ -12,7 +12,7 @@ export default function Footer() {
 			<div className="text-md flex gap-2">
 				<a
 					href="mailto: me@vimhax.com"
-					className="rounded-lg border-[1px] border-solid border-neutral-900 bg-black px-5 py-3 text-lg transition hover:border-white hover:bg-white hover:text-black"
+					className="rounded-2xl bg-neutral-950 px-5 py-3 transition-colors hover:bg-white hover:text-black"
 				>
 					me@vimhax.com
 				</a>

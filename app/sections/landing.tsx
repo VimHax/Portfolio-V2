@@ -5,7 +5,7 @@ import Logo from '@/app/components/svg/Logo';
 
 export default function Landing() {
 	return (
-		<main className="topography flex h-screen w-full flex-col gap-unit p-unit">
+		<main className="mt-12 flex h-screen w-full max-w-screen-xl flex-col gap-unit">
 			<div className="flex h-8 w-full items-center justify-between">
 				<div className="flex items-center gap-8">
 					<Logo className="h-8 w-8 [&_path]:fill-white" />
