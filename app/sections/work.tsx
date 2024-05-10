@@ -10,7 +10,7 @@ function Tag({ name, href }: { name: string; href: string }) {
 		<a
 			target="_blank"
 			href={href}
-			className="h-fit w-fit rounded-2xl px-2 pb-1 pt-1.5 text-sm font-bold uppercase tracking-widest text-neutral-500 transition hover:border-white hover:bg-white hover:text-black"
+			className="h-fit w-fit rounded-2xl px-2 pb-1 pt-1.5 text-sm font-bold uppercase text-neutral-500 transition hover:border-white hover:bg-white hover:text-black"
 		>
 			#{name}
 		</a>
@@ -33,7 +33,7 @@ function Project({
 	tags: { name: string; url: string }[];
 }) {
 	return (
-		<div className="group flex flex-col rounded-2xl border-1 border-solid border-neutral-900 bg-neutral-950 transition-colors">
+		<div className="group flex flex-col rounded-2xl bg-neutral-950 transition-colors">
 			<div className="grid grid-cols-2">
 				<div className="flex flex-grow flex-col items-start justify-between p-20">
 					<div className="flex flex-wrap gap-2">
@@ -46,13 +46,6 @@ function Project({
 						<h2 className="font-title text-4xl font-medium">{subtitle}</h2>
 						<p className="my-10 max-w-prose text-neutral-500">{description}</p>
 					</div>
-					{/* <div>
-						<h2 className="mb-10 font-bold uppercase tracking-widest text-neutral-500">
-							{subtitle}
-						</h2>
-						<h1 className="font-title mb-2 text-9xl font-medium">{title}</h1>
-						<p className="mb-10 max-w-prose">{description}</p>
-					</div> */}
 					<a
 						target="_blank"
 						href={url}
@@ -60,9 +53,6 @@ function Project({
 					>
 						Visit GitHub Repository
 					</a>
-					{/* <button className="rounded-2xl bg-neutral-800 px-5 py-3 text-sm font-bold uppercase tracking-widest">
-						GitHub
-					</button> */}
 				</div>
 				<div className="relative h-full rounded-2xl bg-neutral-950 group-even:-order-1">
 					<Image
@@ -74,14 +64,6 @@ function Project({
 					/>
 				</div>
 			</div>
-			{/* <div className="flex flex-grow flex-col items-start justify-between p-10">
-				<div>
-					<h2 className="mb-10 font-bold uppercase tracking-widest text-neutral-500">{subtitle}</h2>
-					<h1 className="font-title mb-2 text-9xl font-medium">{title}</h1>
-					<p className="mb-10 max-w-prose">{description}</p>
-				</div>
-				<button className="rounded-2xl bg-neutral-800 px-5 py-3">GitHub</button>
-			</div> */}
 		</div>
 	);
 	// return (

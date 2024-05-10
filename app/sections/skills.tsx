@@ -18,12 +18,12 @@ function Skill({ name, url, children }: { name: string; url: string; children: R
 		<a
 			href={url}
 			target="_blank"
-			className="group relative flex aspect-square flex-col items-center justify-center gap-7 rounded-2xl border-1 border-solid border-neutral-900 bg-neutral-950 transition-colors hover:border-white hover:bg-white hover:text-black"
+			className="group flex aspect-square flex-col items-center justify-center gap-7 rounded-2xl bg-neutral-950 text-neutral-500 transition-colors hover:bg-white hover:text-black"
 		>
-			<div className="[&_div]:h-20 [&_div]:w-20 [&_path]:fill-white [&_path]:transition-colors group-hover:[&_path]:fill-black [&_svg]:h-20 [&_svg]:w-20">
+			<div className="text-white group-hover:text-black [&_div]:h-20 [&_div]:w-20 [&_path]:fill-white [&_path]:transition-colors group-hover:[&_path]:fill-black [&_svg]:h-20 [&_svg]:w-20">
 				{children}
 			</div>
-			<span className="text-sm font-bold uppercase tracking-widest text-neutral-500">{name}</span>
+			<span className="text-sm font-bold uppercase">{name}</span>
 		</a>
 	);
 	// return (
@@ -64,7 +64,9 @@ export default function Skills() {
 					<JavaLogo />
 				</Skill>
 				<Skill name="GLSL" url="https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language">
-					<div className="flex items-center justify-center text-3xl font-bold">GLSL</div>
+					<div className="flex items-center justify-center text-3xl font-bold transition-colors">
+						GLSL
+					</div>
 				</Skill>
 				<Skill name="SvelteKit" url="https://kit.svelte.dev/">
 					<SvelteLogo />
