@@ -5,14 +5,13 @@ import Work from './sections/work';
 
 export default function Main() {
 	return (
-		<>
+		<div className="flex flex-col items-center">
 			<Landing />
-			<hr className="border-neutral-900" />
 			<Work />
 			<hr className="border-neutral-900" />
 			<Skills />
 			<hr className="border-neutral-900" />
 			<Footer />
-		</>
+		</div>
 	);
 }

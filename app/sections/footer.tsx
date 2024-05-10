@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<main className="topography flex w-full items-center justify-between p-unit">
 			<div className="flex items-center gap-8">
-				<Logo className="h-8 w-8" />
+				<Logo className="h-8 w-8 [&_path]:fill-white" />
 				<div className="h-8 w-[1px] bg-white/50"></div>
 				<span className="text-2xl font-bold uppercase tracking-widest">Vimukthi Weerabahu</span>
 			</div>

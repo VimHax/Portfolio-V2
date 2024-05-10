@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-	--unit: 48px;
+	--unit: 3rem;
 }
 
 @media (max-width: 1024px) {
 	:root {
-		--unit: 24px;
+		--unit: 1.5rem;
 	}
 }
 
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-	@apply overflow-x-clip bg-black text-white;
+	@apply font-body overflow-x-clip bg-black text-lg font-medium text-white;
 }
 
 /* 

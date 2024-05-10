@@ -18,9 +18,9 @@ function Skill({ name, url, children }: { name: string; url: string; children: R
 		<a
 			href={url}
 			target="_blank"
-			className="group relative flex aspect-square flex-col items-center justify-center gap-7 rounded-lg border-[1px] border-solid border-neutral-900 transition hover:border-white hover:bg-white hover:text-black"
+			className="group relative flex aspect-square flex-col items-center justify-center gap-7 rounded-lg bg-neutral-900 hover:bg-white hover:text-black"
 		>
-			<div className="[&_div]:h-20 [&_div]:w-20 [&_path]:transition group-hover:[&_path]:fill-black [&_svg]:h-20 [&_svg]:w-20">
+			<div className="[&_div]:h-20 [&_div]:w-20 [&_path]:fill-white group-hover:[&_path]:fill-black [&_svg]:h-20 [&_svg]:w-20">
 				{children}
 			</div>
 			<span className="text-md font-bold uppercase">{name}</span>
