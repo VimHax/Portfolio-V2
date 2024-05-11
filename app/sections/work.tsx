@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import SonarImg from './sonar.png';
 import AresImg from './ares.png';
@@ -65,111 +65,32 @@ function Project({
 				</div>
 				<div className="relative h-full rounded-2xl p-10 pr-0 group-even:-order-1">
 					<Image />
-					{/* <Shader
-						id={`work_${title}`}
-						className="absolute left-0 top-0 h-full w-full group-odd:rounded-r-2xl group-even:rounded-l-2xl"
-						source={bg}
-						scale={1.0}
-						uniforms={{ SocialType: -1 }}
-					/> */}
-					{/* <Image
-						className="object-cover object-left group-odd:rounded-r-2xl group-even:rounded-l-2xl"
-						src={image.src}
-						alt={image.alt}
-						fill
-						quality={100}
-					/> */}
 				</div>
 			</div>
 		</div>
 	);
-	// return (
-	// 	<div className="group grid grid-cols-1 grid-rows-2 rounded-lg 2xl:grid-cols-2 2xl:grid-rows-1">
-	// 		{/* <div className="relative w-full mix-blend-screen">
-	// 			<Image
-	// 				className="object-cover object-center max-2xl:rounded-t-lg 2xl:group-odd:rounded-r-lg 2xl:group-even:rounded-l-lg"
-	// 				src={image.src}
-	// 				alt={image.alt}
-	// 				fill
-	// 				quality={100}
-	// 			/>
-	// 			<div className="absolute left-0 top-0 h-full w-full from-black via-transparent to-transparent max-2xl:rounded-t-lg max-2xl:bg-gradient-to-t 2xl:group-odd:rounded-r-lg 2xl:group-odd:bg-gradient-to-r 2xl:group-even:rounded-l-lg 2xl:group-even:bg-gradient-to-l"></div>
-	// 			<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white/5 max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
-	// 			<div className="absolute left-0 top-0 h-full w-full border-[1px] border-solid border-white mix-blend-overlay max-2xl:rounded-t-lg max-2xl:border-b-0 2xl:group-odd:rounded-r-lg 2xl:group-odd:border-l-0 2xl:group-even:rounded-l-lg 2xl:group-even:border-r-0"></div>
-	// 		</div> */}
-	// 		<div className="flex flex-col items-center justify-center gap-7	border-[1px] border-solid border-neutral-900 p-unit max-2xl:rounded-b-lg max-2xl:border-t-0 2xl:p-32 2xl:group-odd:-order-1 2xl:group-odd:rounded-l-lg 2xl:group-odd:border-r-0 2xl:group-even:rounded-r-lg 2xl:group-even:border-l-0">
-	// 			<div className="flex w-full items-end justify-between">
-	// 				<div className="flex flex-col gap-2">
-	// 					<h1 className="text-7xl font-bold">{title}</h1>
-	// 					<h2 className="text-sm font-bold uppercase tracking-widest">{subtitle}</h2>
-	// 				</div>
-	// 				<div className="flex gap-2">
-	// 					{links.map(({ network, url }, idx) => (
-	// 						<Social key={idx} network={network} href={url} />
-	// 					))}
-	// 				</div>
-	// 			</div>
-	// 			<div className="flex w-full flex-wrap items-center gap-2">
-	// 				{tags.map(({ name, url }, idx) => (
-	// 					<Tag key={idx} name={name} href={url} />
-	// 				))}
-	// 				<hr className="flex-grow border-neutral-900" />
-	// 			</div>
-	// 			<div className="flex flex-col gap-5">
-	// 				<p>{description}</p>
-	// 			</div>
-	// 		</div>
-	// 	</div>
-	// );
 }
 
 export default function Work() {
 	return (
 		<main id="work" className="mt-32 max-w-screen-xl">
-			{/* <h1 className="font-title mt-32 text-7xl font-medium">Some of my work;</h1> */}
 			<h1 className="text-center font-title text-7xl font-medium">Work</h1>
 			<div className="mt-16 flex w-full flex-col gap-10">
-				<Project
-					title="Ares"
-					subtitle="A Programming Language"
-					url="https://github.com/VimHax/Ares"
-					image={() => {
-						return (
-							<div className="relative h-full w-full">
-								<Image
-									className="object-cover object-left p-10 pr-0 mix-blend-luminosity"
-									src={AresImg.src}
-									alt={'a'}
-									fill
-									quality={100}
-								/>
-							</div>
-						);
-					}}
-					tags={[
-						{ name: 'Rust', url: 'https://www.rust-lang.org/' },
-						{ name: 'LLVM', url: 'https://llvm.org/' }
-					]}
-					description="A statically typed compiled programming language, inspired by Rust and TypeScript, with advanced static analysis enabling compile-time type inference."
-				/>
 				<Project
 					title="Sonar"
 					subtitle="A Desktop Application"
 					url="https://github.com/VimHax/Sonar"
-					image={() => {
-						return (
-							<div className="relative h-full w-full">
-								<Image
-									className="object-cover object-left mix-blend-luminosity"
-									style={{ maskImage: 'linear-gradient(90deg, #000 75%, transparent)' }}
-									src={SonarImg.src}
-									alt={'a'}
-									fill
-									quality={100}
-								/>
-							</div>
-						);
-					}}
+					image={() => (
+						<div className="relative h-full w-full">
+							<Image
+								className="rounded-md object-cover object-left mix-blend-luminosity backdrop-blur-3xl"
+								src={SonarImg.src}
+								alt={'a'}
+								fill
+								quality={100}
+							/>
+						</div>
+					)}
 					tags={[
 						{ name: 'Flutter', url: 'https://flutter.dev/' },
 						{ name: 'Supabase', url: 'https://supabase.com/' },
@@ -179,12 +100,43 @@ export default function Work() {
 					description="Enhance your Discord Server experience by adding custom sound effects that can be played with just a click of a button whenever you like."
 				/>
 				<Project
+					title="Ares"
+					subtitle="A Programming Language"
+					url="https://github.com/VimHax/Ares"
+					image={() => (
+						<div className="relative h-full w-full">
+							<Image
+								className="object-cover object-left mix-blend-luminosity"
+								style={{ maskImage: 'linear-gradient(90deg, #000 50%, transparent)' }}
+								src={AresImg.src}
+								alt="Sample Ares code."
+								fill
+								quality={100}
+							/>
+						</div>
+					)}
+					tags={[
+						{ name: 'Rust', url: 'https://www.rust-lang.org/' },
+						{ name: 'LLVM', url: 'https://llvm.org/' }
+					]}
+					description="A statically typed compiled programming language, inspired by Rust and TypeScript, with advanced static analysis enabling compile-time type inference."
+				/>
+
+				<Project
 					title="Eelios"
 					subtitle="A Programming Language"
 					url="https://github.com/VimHax/Eelios"
-					image={() => {
-						return <div>A</div>;
-					}}
+					image={() => (
+						<div className="relative h-full w-full">
+							<Image
+								className="object-cover object-left mix-blend-luminosity"
+								src={EeliosImg.src}
+								alt="Sample Eelios code."
+								fill
+								quality={100}
+							/>
+						</div>
+					)}
 					tags={[
 						{ name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
 						{ name: 'Node.js', url: 'https://nodejs.org/' }
