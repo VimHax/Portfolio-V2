@@ -17,7 +17,6 @@ export default function Footer() {
 				</a>
 				<Social network="github" href="https://github.com/VimHax" />
 				<Social network="linkedin" href="https://www.linkedin.com/in/vimukthi-weerabahu/" />
-				<Social network="instagram" href="https://www.instagram.com/vimhax/" />
 				<Social network="twitter" href="https://twitter.com/VimHax" />
 			</div>
 		</main>
