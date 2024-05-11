@@ -1,3 +1,4 @@
+import About from './sections/about';
 import Contact from './sections/contact';
 import Footer from './sections/footer';
 import Landing from './sections/landing';
@@ -11,6 +12,7 @@ export default function Main() {
 			<Work />
 			<Skills />
 			<Contact />
+			<About />
 			<Footer />
 		</div>
 	);
