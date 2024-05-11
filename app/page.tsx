@@ -1,3 +1,4 @@
+import Contact from './sections/contact';
 import Footer from './sections/footer';
 import Landing from './sections/landing';
 import Skills from './sections/skills';
@@ -8,9 +9,8 @@ export default function Main() {
 		<div className="flex flex-col items-center">
 			<Landing />
 			<Work />
-			<hr className="border-neutral-900" />
 			<Skills />
-			<hr className="border-neutral-900" />
+			<Contact />
 			<Footer />
 		</div>
 	);

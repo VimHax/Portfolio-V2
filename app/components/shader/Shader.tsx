@@ -84,5 +84,5 @@ export default function Shader({
 		resizeObserver.observe(canvas.current);
 	});
 
-	return <canvas className={`shader ${className}`} ref={canvas}></canvas>;
+	return <canvas className={`shader ${className} bg-neutral-950`} ref={canvas}></canvas>;
 }
