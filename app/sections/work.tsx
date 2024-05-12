@@ -64,7 +64,7 @@ function Project({
 						Visit GitHub Repository
 					</a>
 				</div>
-				<div className="-order-1 h-full rounded-2xl p-5 pr-0 sm:p-10 lg:group-odd:order-1">
+				<div className="-order-1 h-full rounded-2xl p-5 pr-0 sm:p-10 sm:pr-0 lg:group-odd:order-1">
 					<Image />
 				</div>
 			</div>
