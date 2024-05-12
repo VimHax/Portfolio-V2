@@ -1,3 +1,4 @@
+import FollowingNavbar from './components/FollowingNavbar';
 import About from './sections/about';
 import Contact from './sections/contact';
 import Footer from './sections/footer';
@@ -7,13 +8,16 @@ import Work from './sections/work';
 
 export default function Main() {
 	return (
-		<div className="flex flex-col items-center">
-			<Landing />
-			<Work />
-			<Skills />
-			<Contact />
-			<About />
-			<Footer />
-		</div>
+		<>
+			<FollowingNavbar />
+			<div className="flex flex-col items-center">
+				<Landing />
+				<Work />
+				<Skills />
+				<Contact />
+				<About />
+				<Footer />
+			</div>
+		</>
 	);
 }

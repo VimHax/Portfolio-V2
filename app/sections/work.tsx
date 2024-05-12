@@ -87,9 +87,9 @@ export default function Work() {
 								<Image
 									className="conditional-fade rounded-md object-cover object-left mix-blend-luminosity backdrop-blur-3xl"
 									src={SonarImg.src}
-									alt={'a'}
+									alt="A screenshot of the Sonar desktop application."
+									sizes="100vw"
 									fill
-									quality={100}
 								/>
 							</div>
 						</div>
@@ -113,8 +113,8 @@ export default function Work() {
 								style={{ maskImage: 'linear-gradient(90deg, #000 50%, transparent)' }}
 								src={AresImg.src}
 								alt="Sample Ares code."
+								sizes="200vw"
 								fill
-								quality={100}
 							/>
 						</div>
 					)}
@@ -136,8 +136,8 @@ export default function Work() {
 								style={{ maskImage: 'linear-gradient(90deg, #000 50%, transparent)' }}
 								src={EeliosImg.src}
 								alt="Sample Eelios code."
+								sizes="200vw"
 								fill
-								quality={100}
 							/>
 						</div>
 					)}

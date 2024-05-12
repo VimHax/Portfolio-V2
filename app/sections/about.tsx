@@ -11,9 +11,9 @@ export default function About() {
 						<Image
 							className="rounded-2xl object-cover object-center"
 							src={MeImg.src}
-							alt={'a'}
+							alt="A picture of me."
+							sizes="100vw"
 							fill
-							quality={100}
 						/>
 					</div>
 					<div className="flex w-full flex-col justify-end rounded-2xl bg-neutral-950 p-5 sm:p-10 lg:h-full xl:p-20">
