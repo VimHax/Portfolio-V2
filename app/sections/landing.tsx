@@ -30,7 +30,7 @@ export default function Landing() {
 				uniforms={{ Light: 1 }}
 			/>
 			<div className="absolute left-0 top-0 mt-8 flex w-full justify-center">
-				<div className="flex h-14 w-full max-w-screen-xl items-center justify-between">
+				<div className="mx-8 flex h-14 w-full max-w-screen-xl items-center justify-between">
 					<a
 						href="#home"
 						className="group flex h-full items-center justify-center gap-4 rounded-2xl bg-neutral-950/50 px-4 backdrop-blur-3xl hover:bg-white hover:text-black"
@@ -39,7 +39,7 @@ export default function Landing() {
 						<span className="-mb-1 font-title text-xl font-semibold">Vimukthi Weerabahu</span>
 					</a>
 					<span className="font-bold">A Full-Stack Developer.</span>
-					<div className="mr-3 flex h-full items-center overflow-clip rounded-2xl bg-neutral-950/50 backdrop-blur-3xl">
+					<div className="flex h-full items-center overflow-clip rounded-2xl bg-neutral-950/50 backdrop-blur-3xl">
 						<Link name="Work" url="#work" />
 						<Link name="Skills" url="#skills" />
 						<Link name="Contact" url="#contact" />

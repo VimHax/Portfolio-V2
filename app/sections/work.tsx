@@ -72,9 +72,9 @@ function Project({
 
 export default function Work() {
 	return (
-		<main id="work" className="mt-32 max-w-screen-xl">
+		<main id="work" className="mx-8 mt-32 max-w-screen-xl">
 			<h1 className="text-center font-title text-7xl font-medium">Work</h1>
-			<div className="mt-16 flex w-full flex-col gap-10">
+			<div className="mt-16 flex w-full flex-col gap-8">
 				<Project
 					title="Sonar"
 					subtitle="A Desktop Application"

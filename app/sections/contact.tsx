@@ -15,17 +15,19 @@ function Link({ name, user, url }: { name: string; user: string; url: string }) 
 
 export default function Contact() {
 	return (
-		<main id="contact" className="mt-32 flex w-full flex-col items-center">
+		<main id="contact" className="mt-32 w-full">
 			<h1 className="text-center font-title text-7xl font-medium">Contact</h1>
-			<div className="mt-16 grid w-full max-w-screen-xl grid-cols-4 gap-unit/2">
-				<Link name="Email" user="me@vimhax.com" url="mailto: me@vimhax.com" />
-				<Link name="GitHub" user="VimHax" url="https://github.com/VimHax" />
-				<Link
-					name="LinkedIn"
-					user="Vimukthi Weerabahu"
-					url="https://www.linkedin.com/in/vimukthi-weerabahu/"
-				/>
-				<Link name="Twitter" user="@VimHax" url="https://twitter.com/VimHax" />
+			<div className="flex w-full justify-center">
+				<div className="mx-8 mt-16 grid w-full max-w-screen-xl grid-cols-4 gap-4">
+					<Link name="Email" user="me@vimhax.com" url="mailto: me@vimhax.com" />
+					<Link name="GitHub" user="VimHax" url="https://github.com/VimHax" />
+					<Link
+						name="LinkedIn"
+						user="Vimukthi Weerabahu"
+						url="https://www.linkedin.com/in/vimukthi-weerabahu/"
+					/>
+					<Link name="Twitter" user="@VimHax" url="https://twitter.com/VimHax" />
+				</div>
 			</div>
 		</main>
 	);

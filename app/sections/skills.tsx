@@ -34,14 +34,14 @@ export default function Skills() {
 	return (
 		<main id="skills" className="mt-32 w-full">
 			<h1 className="text-center font-title text-7xl font-medium">Skills</h1>
-			<div className="relative mt-16 flex w-full justify-center py-16">
+			<div className="relative mt-16 flex w-full justify-center py-8">
 				<Shader
 					key={bg}
 					className="absolute left-0 top-0 -z-10 h-full w-full"
 					source={bg}
 					uniforms={{ Light: 1 }}
 				/>
-				<div className="grid w-full max-w-screen-xl grid-cols-5 gap-unit/2">
+				<div className="mx-8 grid w-full max-w-screen-xl grid-cols-5 gap-4">
 					<Skill name="TypeScript" url="https://www.typescriptlang.org/">
 						<TSLogo />
 					</Skill>
