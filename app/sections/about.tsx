@@ -3,10 +3,10 @@ import MeImg from './me.png';
 
 export default function About() {
 	return (
-		<main id="about" className="mt-32 w-full">
-			<h1 className="text-center font-title text-7xl font-medium">About</h1>
+		<main id="about" className="mt-16 w-full sm:mt-32">
+			<h1 className="text-center font-title text-5xl font-medium sm:text-7xl">About</h1>
 			<div className="flex w-full justify-center">
-				<div className="mx-8 mt-16 grid w-full max-w-screen-xl grid-cols-2 gap-4">
+				<div className="mx-4 mt-8 flex w-full max-w-screen-xl flex-col gap-4 sm:mx-8 sm:mt-16 lg:grid lg:grid-cols-2">
 					<div className="relative aspect-[9/16] h-full w-full">
 						<Image
 							className="rounded-2xl object-cover object-center"
@@ -16,10 +16,10 @@ export default function About() {
 							quality={100}
 						/>
 					</div>
-					<div className="flex h-full w-full flex-col justify-end rounded-2xl bg-neutral-950 p-20">
+					<div className="flex w-full flex-col justify-end rounded-2xl bg-neutral-950 p-5 sm:p-10 lg:h-full xl:p-20">
 						<div className="text-white/50 [&_a]:text-white">
-							<h1 className="mb-10 font-title text-7xl text-white">
-								Vimukthi <br /> Weerabahu
+							<h1 className="mb-5 font-title text-4xl text-white sm:mb-10 sm:text-7xl">
+								Vimukthi Weerabahu
 							</h1>
 							<p className="mb-5">
 								Hey! I'm a self-taught full-stack developer from Sri Lanka, with my educational
