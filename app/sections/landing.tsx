@@ -25,7 +25,6 @@ export default function Landing() {
 			</h1>
 			<Shader
 				key={bg}
-				id="front_image_bg"
 				className="absolute left-0 top-0 -z-10 h-full w-full"
 				source={bg}
 				uniforms={{ Light: 1 }}

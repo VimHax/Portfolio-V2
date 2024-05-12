@@ -37,7 +37,6 @@ export default function Skills() {
 			<div className="relative mt-16 flex w-full justify-center py-16">
 				<Shader
 					key={bg}
-					id="skills"
 					className="absolute left-0 top-0 -z-10 h-full w-full"
 					source={bg}
 					uniforms={{ Light: 1 }}

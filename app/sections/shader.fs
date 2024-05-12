@@ -12,9 +12,6 @@ varying vec2 coords;
 #define BLUE HEX(0x00, 0x3A, 0xFF)
 
 void main() {
-    // gl_FragColor = vec4(0.0);
-    // return;
-
     vec3 color = vec3(0.0);
 	float Time = Time * 0.5 + Random * 1000.0;
     {
@@ -22,10 +19,8 @@ void main() {
         float x = snoise(vec3(coords * 0.25, Time * 0.1));
 		float f = 0.0;
         {
-            float n = snoise(vec3(coords * 0.5 + x * 4.0, Time * 0.1));
+            float n = snoise(vec3(coords * 0.5 + x * 4.0, Time * 1.1));
             n = (n + 1.0) / 2.0;
-            // float base = 0.0;
-            // n = n > base ? (n - base) / (1.0 - base) : 0.0;
             n = pow(n, 4.0);
             f += n;
         }
@@ -33,12 +28,10 @@ void main() {
             float n = snoise(vec3(coords * 0.5 + x * 1000.0, Time * 0.1));
             float p = snoise(vec3(coords * 0.5, Time * 0.5));
             n = (n + 1.0) / 2.0;
-            // float base = 0.0;
-            // n = n > base ? (n - base) / (1.0 - base) : 0.0;
             n = pow(n, 5.0);
             n *= p * p;
             f *= 1.0 + 2.0 * n;
-			// color += n;
+            f += 0.5 * n;
         }
         {
             vec2 coords = vec2(coords.x + 1000.0, coords.y);
@@ -61,6 +54,7 @@ void main() {
 			n = f * n;
 			color += mix(vec3(0.0), BLUE * 2.5, n);
 		}
+        // color += f;
     }
 
     {

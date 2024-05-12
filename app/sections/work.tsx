@@ -38,7 +38,6 @@ function Project({
 		<div className="group relative flex flex-col overflow-clip rounded-2xl transition-colors">
 			<Shader
 				key={bg}
-				id={`work_${title}`}
 				className="absolute left-0 top-0 -z-10 h-full w-full rounded-2xl"
 				source={bg}
 				uniforms={{ Light: 1 }}
