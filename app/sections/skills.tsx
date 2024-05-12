@@ -20,9 +20,9 @@ function Skill({ name, url, children }: { name: string; url: string; children: R
 		<a
 			href={url}
 			target="_blank"
-			className="group flex aspect-square flex-col items-center justify-center gap-7 rounded-2xl bg-neutral-950/50 text-neutral-500 backdrop-blur-3xl transition-colors hover:bg-white hover:text-black"
+			className="group flex aspect-square flex-col items-center justify-center gap-5 rounded-2xl bg-neutral-950/50 text-neutral-500 backdrop-blur-3xl transition-colors hover:bg-white hover:text-black sm:gap-7"
 		>
-			<div className="text-white group-hover:text-black [&_div]:h-20 [&_div]:w-20 [&_path]:fill-white [&_path]:transition-colors group-hover:[&_path]:fill-black [&_svg]:h-20 [&_svg]:w-20">
+			<div className="text-white group-hover:text-black [&_div]:h-12 [&_div]:w-12 sm:[&_div]:h-16 sm:[&_div]:w-16 xl:[&_div]:h-20 xl:[&_div]:w-20 [&_path]:fill-white [&_path]:transition-colors group-hover:[&_path]:fill-black [&_svg]:h-12 [&_svg]:w-12 sm:[&_svg]:h-16 sm:[&_svg]:w-16 xl:[&_svg]:h-20 xl:[&_svg]:w-20">
 				{children}
 			</div>
 			<span className="text-sm font-bold uppercase">{name}</span>
@@ -32,16 +32,16 @@ function Skill({ name, url, children }: { name: string; url: string; children: R
 
 export default function Skills() {
 	return (
-		<main id="skills" className="mt-32 w-full">
-			<h1 className="text-center font-title text-7xl font-medium">Skills</h1>
-			<div className="relative mt-16 flex w-full justify-center py-8">
+		<main id="skills" className="mt-16 w-full sm:mt-32">
+			<h1 className="text-center font-title text-5xl font-medium sm:text-7xl">Skills</h1>
+			<div className="relative mt-4 flex w-full justify-center py-4 sm:mt-16 sm:py-8">
 				<Shader
 					key={bg}
 					className="absolute left-0 top-0 -z-10 h-full w-full"
 					source={bg}
 					uniforms={{ Light: 1 }}
 				/>
-				<div className="mx-8 grid w-full max-w-screen-xl grid-cols-5 gap-4">
+				<div className="mx-4 grid w-full max-w-screen-xl grid-cols-2 gap-2 min-[500px]:grid-cols-3 sm:mx-8 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
 					<Skill name="TypeScript" url="https://www.typescriptlang.org/">
 						<TSLogo />
 					</Skill>

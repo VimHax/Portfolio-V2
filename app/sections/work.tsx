@@ -75,7 +75,7 @@ function Project({
 export default function Work() {
 	return (
 		<main id="work" className="mx-4 mt-16 max-w-screen-xl sm:mx-8 sm:mt-32">
-			<h1 className="text-center font-title text-7xl font-medium">Work</h1>
+			<h1 className="text-center font-title text-5xl font-medium sm:text-7xl">Work</h1>
 			<div className="mt-4 flex w-full flex-col gap-4 sm:mt-16 sm:gap-8">
 				<Project
 					title="Sonar"
