@@ -36,10 +36,10 @@ export default function Skills() {
 			<h1 className="text-center font-title text-7xl font-medium">Skills</h1>
 			<div className="relative mt-16 flex w-full justify-center py-16">
 				<Shader
+					key={bg}
 					id="skills"
 					className="absolute left-0 top-0 -z-10 h-full w-full"
 					source={bg}
-					scale={1.0}
 					uniforms={{ Light: 1 }}
 				/>
 				<div className="grid w-full max-w-screen-xl grid-cols-5 gap-unit/2">

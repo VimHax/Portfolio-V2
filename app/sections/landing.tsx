@@ -24,10 +24,10 @@ export default function Landing() {
 				Every detail <br /> accounted for.
 			</h1>
 			<Shader
+				key={bg}
 				id="front_image_bg"
 				className="absolute left-0 top-0 -z-10 h-full w-full"
 				source={bg}
-				scale={1.0}
 				uniforms={{ Light: 1 }}
 			/>
 			<div className="absolute left-0 top-0 mt-8 flex w-full justify-center">

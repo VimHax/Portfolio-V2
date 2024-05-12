@@ -1,6 +1,6 @@
 'use client';
 
-import { createRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import vsSource from './vertex.vs';
 import noise3D from './noise3D.glsl';
 import type { Main2Renderer, Renderer2Main } from './types';
@@ -10,19 +10,22 @@ function assert(x: boolean): asserts x {
 }
 
 const targets = new Set<string>();
-const worker = new Worker(new URL('./renderer', import.meta.url));
+let worker: Worker;
+if (typeof window !== 'undefined') {
+	worker = new Worker(new URL('./renderer', import.meta.url));
+
+	worker.addEventListener('message', (event: MessageEvent<Renderer2Main>) => {
+		switch (event.data.type) {
+			case 'log': {
+				console.log(`[WebWorker] ${event.data.message}`);
+				break;
+			}
+		}
+	});
+}
 
 const sendMessage: (tx: Main2Renderer, transfers: Transferable[]) => void = (tx, transfers) =>
 	worker.postMessage(tx, transfers);
-
-worker.addEventListener('message', (event: MessageEvent<Renderer2Main>) => {
-	switch (event.data.type) {
-		case 'log': {
-			console.log(`[WebWorker] ${event.data.message}`);
-			break;
-		}
-	}
-});
 
 export default function Shader({
 	id,
@@ -37,10 +40,13 @@ export default function Shader({
 	source: string;
 	uniforms?: Record<string, number>;
 }) {
-	const canvas = createRef<HTMLCanvasElement>();
+	const initialized = useRef(false);
+	const canvas = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {
 		assert(canvas.current !== null);
+		if (initialized.current) return;
+		initialized.current = true;
 
 		if (targets.has(id)) return;
 		targets.add(id);
@@ -82,7 +88,13 @@ export default function Shader({
 			}
 		});
 		resizeObserver.observe(canvas.current);
-	});
+
+		return () => {
+			targets.delete(id);
+			visibilityObserver.disconnect();
+			resizeObserver.disconnect();
+		};
+	}, []);
 
 	return <canvas className={`shader ${className} bg-neutral-950`} ref={canvas}></canvas>;
 }

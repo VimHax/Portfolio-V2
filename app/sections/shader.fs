@@ -12,6 +12,8 @@ varying vec2 coords;
 #define BLUE HEX(0x00, 0x3A, 0xFF)
 
 void main() {
+    // gl_FragColor = vec4(0.0);
+    // return;
 
     vec3 color = vec3(0.0);
 	float Time = Time * 0.5 + Random * 1000.0;
