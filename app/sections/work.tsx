@@ -42,17 +42,19 @@ function Project({
 				source={bg}
 				uniforms={{ Light: 1 }}
 			/>
-			<div className="grid grid-cols-2">
-				<div className="flex flex-grow flex-col items-start justify-between bg-neutral-950/50 p-20 backdrop-blur-3xl">
-					<div className="flex flex-wrap gap-2">
+			<div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1">
+				<div className="flex flex-grow flex-col items-start justify-between bg-neutral-950/50 p-5 backdrop-blur-3xl sm:p-10 xl:p-20">
+					<div className="flex flex-wrap gap-1 sm:flex-nowrap xl:gap-2">
 						{tags.map(({ name, url }, idx) => (
 							<Tag key={idx} name={name} href={url} />
 						))}
 					</div>
 					<div>
-						<h1 className="mt-10 font-title text-9xl font-medium">{title}</h1>
-						<h2 className="font-title text-4xl font-medium">{subtitle}</h2>
-						<p className="my-10 max-w-prose text-white/50">{description}</p>
+						<h1 className="mt-5 font-title text-7xl font-medium sm:mt-10 sm:text-8xl xl:text-9xl">
+							{title}
+						</h1>
+						<h2 className="font-title text-lg font-medium sm:text-3xl xl:text-4xl">{subtitle}</h2>
+						<p className="my-5 max-w-prose text-white/50 sm:my-10">{description}</p>
 					</div>
 					<a
 						target="_blank"
@@ -62,7 +64,7 @@ function Project({
 						Visit GitHub Repository
 					</a>
 				</div>
-				<div className="relative h-full rounded-2xl p-10 pr-0 group-even:-order-1">
+				<div className="-order-1 h-full rounded-2xl p-5 pr-0 sm:p-10 lg:group-odd:order-1">
 					<Image />
 				</div>
 			</div>
@@ -72,22 +74,24 @@ function Project({
 
 export default function Work() {
 	return (
-		<main id="work" className="mx-8 mt-32 max-w-screen-xl">
+		<main id="work" className="mx-4 mt-16 max-w-screen-xl sm:mx-8 sm:mt-32">
 			<h1 className="text-center font-title text-7xl font-medium">Work</h1>
-			<div className="mt-16 flex w-full flex-col gap-8">
+			<div className="mt-4 flex w-full flex-col gap-4 sm:mt-16 sm:gap-8">
 				<Project
 					title="Sonar"
 					subtitle="A Desktop Application"
 					url="https://github.com/VimHax/Sonar"
 					image={() => (
-						<div className="relative h-full w-full">
-							<Image
-								className="rounded-md object-cover object-left mix-blend-luminosity backdrop-blur-3xl"
-								src={SonarImg.src}
-								alt={'a'}
-								fill
-								quality={100}
-							/>
+						<div className="flex h-full items-center">
+							<div className="relative h-full min-h-96 w-full md:min-h-full md:max-lg:aspect-video md:max-lg:h-auto md:max-lg:w-[calc(100%-2.5rem)]">
+								<Image
+									className="conditional-fade rounded-md object-cover object-left mix-blend-luminosity backdrop-blur-3xl"
+									src={SonarImg.src}
+									alt={'a'}
+									fill
+									quality={100}
+								/>
+							</div>
 						</div>
 					)}
 					tags={[
@@ -103,7 +107,7 @@ export default function Work() {
 					subtitle="A Programming Language"
 					url="https://github.com/VimHax/Ares"
 					image={() => (
-						<div className="relative h-full w-full">
+						<div className="relative h-full min-h-96 w-full">
 							<Image
 								className="object-cover object-left mix-blend-luminosity"
 								style={{ maskImage: 'linear-gradient(90deg, #000 50%, transparent)' }}
@@ -126,9 +130,10 @@ export default function Work() {
 					subtitle="A Programming Language"
 					url="https://github.com/VimHax/Eelios"
 					image={() => (
-						<div className="relative h-full w-full">
+						<div className="relative h-full min-h-96 w-full">
 							<Image
-								className="object-cover object-left mix-blend-luminosity"
+								className="conditional-fade object-cover object-left mix-blend-luminosity"
+								style={{ maskImage: 'linear-gradient(90deg, #000 50%, transparent)' }}
 								src={EeliosImg.src}
 								alt="Sample Eelios code."
 								fill
