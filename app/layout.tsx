@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const titleFont = localFont({ src: './CabinetGrotesk-Variable.woff2', variable: '--font-title' });
 const bodyFont = localFont({ src: './Satoshi-Variable.woff2', variable: '--font-body' });
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${titleFont.variable} ${bodyFont.variable}`}>{children}</body>
+			<body className={`${titleFont.variable} ${bodyFont.variable}`}>
+				{children}
+				<Analytics />
+				<SpeedInsights />
+			</body>
 		</html>
 	);
 }
