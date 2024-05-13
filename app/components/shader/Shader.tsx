@@ -6,12 +6,15 @@ import Image from 'next/image';
 import { assert } from '../util';
 import Renderer from './renderer';
 import fs from './fragment.fs';
+import FPSMeter from './fps';
 
 enum ShaderState {
 	Initializing,
 	Playing,
 	Fallback
 }
+
+let fpsMeter: FPSMeter | null = null;
 
 export default function Shader({ className = '' }: { className?: string }) {
 	const [shaderState, setShaderState] = useState(ShaderState.Initializing);
@@ -22,18 +25,32 @@ export default function Shader({ className = '' }: { className?: string }) {
 		if (initialized.current) return;
 		initialized.current = true;
 
+		if (fpsMeter === null) {
+			fpsMeter = new FPSMeter();
+			fpsMeter.startMeasuring();
+		}
+
 		assert(canvas.current !== null);
 		const renderer = new Renderer(canvas.current, fs);
 		if (!renderer.initialize()) {
 			setShaderState(ShaderState.Fallback);
 			return;
 		}
-		if (renderer.draw(true) > 30) {
-			setShaderState(ShaderState.Fallback);
-			return;
-		}
-		setShaderState(ShaderState.Playing);
-		renderer.play();
+
+		fpsMeter.getInitialFPS().then((targetFPS) => {
+			assert(fpsMeter !== null);
+			renderer.play();
+			setShaderState(ShaderState.Playing);
+			let arr: number[] = [];
+			fpsMeter.onMeasure((fps) => {
+				arr.push(fps);
+				if (arr.length > 3) arr.shift();
+				if (arr.length === 3 && arr.reduce((acc, x) => acc + x / 3, 0) < targetFPS * 0.75) {
+					renderer.stop();
+					setShaderState(ShaderState.Fallback);
+				}
+			});
+		});
 	}, []);
 
 	return (

@@ -28,6 +28,7 @@ export default class Renderer {
 	private _startedAt: number | null = null;
 	private _random: number | null = null;
 	private _frame: number = 0;
+	private _stopPlaying: boolean = false;
 
 	constructor(
 		private _canvas: HTMLCanvasElement,
@@ -61,7 +62,7 @@ export default class Renderer {
 		// attempt to make a shader program
 		const shaderProgram = this._initShaderProgram(
 			vsSource,
-			`precision mediump float;\n${noise3D}\n${this._fsSource}`
+			`precision highp float;\n${noise3D}\n${this._fsSource}`
 		);
 		if (shaderProgram === null) {
 			console.error('Unable to initialize the shader program.');
@@ -96,8 +97,9 @@ export default class Renderer {
 	}
 
 	public play() {
+		if (this._stopPlaying) return;
 		// skip if not visible
-		if (!this._isInViewport() || this._frame % 2 == 1) {
+		if (!this._isInViewport() || this._frame++ % 2 == 1) {
 			// schedule the next draw call
 			requestAnimationFrame(() => this.play());
 			return;
@@ -105,6 +107,10 @@ export default class Renderer {
 		this.draw();
 		// schedule the next draw call
 		requestAnimationFrame(() => this.play());
+	}
+
+	public stop() {
+		this._stopPlaying = true;
 	}
 
 	public draw(blocking = false): number {
@@ -176,12 +182,13 @@ export default class Renderer {
 		}
 
 		if (blocking) {
-			this._gl.flush();
-			this._gl.finish();
+			const pixels = new Uint8Array(1 * 1 * 4);
+			this._gl.readPixels(0, 0, 1, 1, this._gl.RGBA, this._gl.UNSIGNED_BYTE, pixels);
+			const renderStop = performance.now();
+			return renderStop - renderStart;
 		}
-		const renderStop = performance.now();
 
-		return renderStop - renderStart;
+		return 0;
 	}
 
 	// https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
