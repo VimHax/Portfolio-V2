@@ -13,7 +13,6 @@ import JavaLogo from '../components/svg/JavaLogo';
 import LinuxLogo from '../components/svg/LinuxLogo';
 import NodeJSLogo from '../components/svg/NodeJSLogo';
 import Shader from '../components/shader/Shader';
-import bg from './shader.fs';
 
 function Skill({ name, url, children }: { name: string; url: string; children: ReactNode }) {
 	return (
@@ -35,12 +34,7 @@ export default function Skills() {
 		<main id="skills" className="mt-16 w-full sm:mt-32">
 			<h1 className="text-center font-title text-5xl font-medium sm:text-7xl">Skills</h1>
 			<div className="relative mt-4 flex w-full justify-center py-4 sm:mt-16 sm:py-8">
-				<Shader
-					key={bg}
-					className="absolute left-0 top-0 -z-10 h-full w-full"
-					source={bg}
-					uniforms={{ Light: 1 }}
-				/>
+				<Shader className="absolute left-0 top-0 -z-10 h-full w-full" />
 				<div className="mx-4 grid w-full max-w-screen-xl grid-cols-2 gap-2 min-[500px]:grid-cols-3 sm:mx-8 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
 					<Skill name="TypeScript" url="https://www.typescriptlang.org/">
 						<TSLogo />

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	@apply overflow-x-clip bg-black font-body text-base font-medium text-white sm:text-lg;
+	@apply bg-black font-body text-base font-medium text-white sm:text-lg;
 }
 
 /* 

@@ -1,4 +1,3 @@
-import bg from './shader.fs';
 import Shader from '../components/shader/Shader';
 import Navbar from '../components/Navbar';
 
@@ -11,12 +10,7 @@ export default function Landing() {
 			<h1 className="whitespace-nowrap font-title text-5xl font-semibold leading-[0.75] sm:text-7xl sm:leading-[0.75] md:text-8xl md:leading-[0.75] lg:text-9xl lg:leading-[0.75]">
 				Every detail <br /> accounted for.
 			</h1>
-			<Shader
-				key={bg}
-				className="absolute left-0 top-0 -z-10 h-full w-full"
-				source={bg}
-				uniforms={{ Light: 1 }}
-			/>
+			<Shader className="absolute left-0 top-0 -z-10 h-full w-full" />
 			<div className="absolute left-0 top-0 flex w-full justify-center">
 				<Navbar />
 			</div>

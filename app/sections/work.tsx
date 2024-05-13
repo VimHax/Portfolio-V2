@@ -3,7 +3,6 @@ import Image from 'next/image';
 import SonarImg from './sonar.png';
 import AresImg from './ares.png';
 import EeliosImg from './eelios.png';
-import bg from './shader.fs';
 import Shader from '../components/shader/Shader';
 import { FC } from 'react';
 
@@ -36,12 +35,7 @@ function Project({
 }) {
 	return (
 		<div className="group relative flex flex-col overflow-clip rounded-2xl transition-colors">
-			<Shader
-				key={bg}
-				className="absolute left-0 top-0 -z-10 h-full w-full rounded-2xl"
-				source={bg}
-				uniforms={{ Light: 1 }}
-			/>
+			<Shader className="absolute left-0 top-0 -z-10 h-full w-full rounded-2xl" />
 			<div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1">
 				<div className="flex flex-grow flex-col items-start justify-between bg-neutral-950/50 p-5 backdrop-blur-3xl sm:p-10 xl:p-20">
 					<div className="flex flex-wrap gap-1 sm:flex-nowrap xl:gap-2">
