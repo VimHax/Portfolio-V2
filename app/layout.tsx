@@ -8,7 +8,8 @@ const titleFont = localFont({ src: './CabinetGrotesk-Variable.woff2', variable: 
 const bodyFont = localFont({ src: './Satoshi-Variable.woff2', variable: '--font-body' });
 
 export const metadata: Metadata = {
-	title: 'VimHax | Portfolio'
+	title: 'VimHax | Portfolio',
+	description: 'A full-stack developer based in Sri Lanka.'
 };
 
 export default function RootLayout({
