@@ -11,7 +11,8 @@ export const viewport: Viewport = { themeColor: '#EB237A' };
 
 export const metadata: Metadata = {
 	title: 'VimHax | Portfolio',
-	description: 'A full-stack developer based in Sri Lanka.'
+	description: 'A full-stack developer based in Sri Lanka.',
+	openGraph: { url: 'https://vimhax.com' }
 };
 
 export default function RootLayout({
