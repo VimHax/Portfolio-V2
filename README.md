@@ -1,5 +1,7 @@
 # Portfolio V2
 
+![Screenshot of the website](screenshot.png)
+
 This repository contains the source code of the second (public) iteration of my portfolio website.
 
 ## Build Instructions
