@@ -40,7 +40,15 @@ export default class Renderer {
 		this._initialized = true;
 		console.log('Initializing shader...');
 
-		this._gl = this._canvas.getContext('webgl2');
+		// https://github.com/motion-canvas/motion-canvas/blob/944b48fff891c2cbbcc89ccb141ec197ecda4752/packages/core/src/app/SharedWebGLContext.ts#L121-L126
+		this._gl = this._canvas.getContext('webgl2', {
+			alpha: false,
+			depth: false,
+			stencil: false,
+			premultipliedAlpha: false,
+			antialias: false,
+			powerPreference: 'high-performance'
+		});
 
 		// only continue if WebGL is available and working
 		if (this._gl === null) {
